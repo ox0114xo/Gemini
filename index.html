@@ -208,6 +208,7 @@
             transition: background-color 0.2s;
             background-color: rgba(26,115,232,0.04);
             margin: 8px 0;
+            font-size: 15px;
         }
 
         .action-link:hover {
@@ -238,6 +239,15 @@
             display: block;
             color: var(--google-red);
             margin-bottom: 4px;
+        }
+
+        .note-box {
+            background-color: #f1f3f4;
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
         }
 
         /* 回到頂部按鈕 */
@@ -279,6 +289,11 @@
         <header class="page-header">
             <h1>Gemini Advanced 12個月免費領取教學</h1>
             <p>無需 Pixel 設備 · 免學生認證 · 安全快速設定</p>
+            <div style="margin-top: 16px;">
+                <a href="https://support.google.com/gemini/answer/13529884" target="_blank" class="action-link" style="background-color: transparent; border: 1px solid var(--border-color);">
+                    <span class="material-symbols-outlined">info</span> 官方活動詳情與規範
+                </a>
+            </div>
         </header>
 
         <section class="card prep-section">
@@ -301,17 +316,21 @@
         <section class="card step-container">
             <div class="step-header">
                 <div class="step-number">1</div>
-                <h2 class="step-title">註冊全新 Google 帳號</h2>
+                <h2 class="step-title">取得 Google 帳號</h2>
             </div>
             <ol class="custom-list">
                 <li>為避免與您原本的帳號設定衝突或觸發安全機制，強烈建議<strong>註冊一個全新的帳號</strong>來操作。</li>
                 <li>
                     <a href="https://accounts.google.com/signup" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">open_in_new</span> 前往 Google 帳號註冊頁面
+                        <span class="material-symbols-outlined">person_add</span> 前往 Google 帳號註冊頁面
                     </a>
                 </li>
                 <li>註冊完成後，請務必將帳號與密碼妥善保存至您的備忘錄中。</li>
             </ol>
+            <div class="note-box">
+                <strong>備用方案：</strong>如果您因為網路環境無法順利註冊新帳號，也可選擇購買已建置好的乾淨帳號 <br>
+                <a href="https://gmailbuy.com/" target="_blank" style="color: var(--google-blue); text-decoration: none; display: inline-block; margin-top: 8px;">👉 點此前往 Gmail 帳號購買平台</a>
+            </div>
         </section>
 
         <section class="card step-container">
@@ -327,14 +346,18 @@
                         <span class="material-symbols-outlined">login</span> 前往 Google 登入
                     </a>
                 </li>
-                <li>登入成功後，將網頁滑至最底端，確認地區顯示為「美國」。</li>
                 <li>
-                    進階驗證：
-                    <a href="https://console.cloud.google.com/" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">cloud</span> 打開 Google Cloud
-                    </a>，若系統自動識別國家為「美國」，代表節點偽裝成功。
+                    登入成功後，請進行進階驗證，若系統自動識別國家為「美國」，代表節點偽裝成功：
+                    <a href="https://console.cloud.google.com/welcome/new?_gl=1*35tsm*_up*MQ..*_gs*MQ..&gclid=CjwKCAjwvqjOBhAGEiwAngeQnQiAH1oqwctNO_su4NsvM_zHBkB9NRQ3Bl4_S-_d9CM1fB3qeol8XRoC-z0QAvD_BwE&gclsrc=aw.ds&pli=1" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">cloud</span> 打開 Google Cloud 進行驗證
+                    </a>
                 </li>
             </ol>
+            <div class="note-box">
+                <strong>💡 2FA 驗證工具 (若您是購買的帳號)：</strong>若您登入時需要輸入兩步驗證碼，請使用購買時附帶的密鑰，透過以下工具獲取 6 位數驗證碼：<br>
+                <a href="https://2fa.vip/" target="_blank" style="color: var(--google-blue); text-decoration: none; margin-right: 16px;">👉 2FA 接收網站 (一)</a>
+                <a href="https://2fa.kennygmail.com/" target="_blank" style="color: var(--google-blue); text-decoration: none;">👉 2FA 接收網站 (二)</a>
+            </div>
         </section>
 
         <section class="card step-container">
@@ -368,13 +391,18 @@
             </div>
             <ol class="custom-list">
                 <li>
-                    打開代刷平台：
-                    <a href="#" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">devices</span> 第三方 Pixel 認證平台 
-                    </a> <span style="font-size: 14px; color: var(--text-secondary);">(請填入實際網址)</span>
+                    若您的認證平台帳戶餘額不足，請先購買積分：
+                    <a href="https://www.pksto.com/" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">shopping_cart</span> one.idkey 積分購買
+                    </a>
                 </li>
-                <li>註冊該網站會員，選擇「Pixel 設備認證」服務並完成購買。</li>
-                <li>付款後，在認證介面中填入您的 Google 帳號與密碼，授權平台進行設備模擬。</li>
+                <li>
+                    打開代刷認證平台：
+                    <a href="https://one.idkey.cc/?ref=729999721" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">devices</span> one.idkey 認證網站
+                    </a>
+                </li>
+                <li>在認證介面中填入您的 Google 帳號與密碼，授權平台進行設備模擬。</li>
                 <li>點擊開始驗證，等待約 30 秒。成功後，系統會產出一串專屬兌換網址。</li>
                 <li>將該網址複製並在瀏覽器新分頁中打開，若出現 12 個月免費畫面，即代表認證成功。</li>
             </ol>
@@ -387,20 +415,23 @@
             </div>
             <ol class="custom-list">
                 <li>
-                    前往兌換：
-                    <a href="https://gemini.google.com/advanced" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">card_membership</span> 開啟 Gemini Advanced 兌換頁
+                    前往 Gemini 兌換頁面：
+                    <a href="https://gemini.google.com/app" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">card_membership</span> 開啟 Gemini 頁面
                     </a>
                 </li>
-                <li>點擊「開始使用」，付款方式選擇<strong>「新增信用卡」</strong>，並填寫卡號等資訊。</li>
+                <li style="list-style-type: none; padding-left: 0; margin-top: -8px;">
+                    <span style="font-size: 14px; color: var(--text-secondary); display: block; margin-bottom: 8px;">(若上方連結無法開啟優惠畫面，請改用備用連結： <a href="https://gemini.google.com/gems/create?hl=en-US" target="_blank" style="color: var(--google-blue);">備用兌換入口</a>)</span>
+                </li>
+                <li>點擊「開始使用」，付款方式選擇<strong>「新增信用卡」</strong>，並填寫您準備好的國內外幣信用卡或虛擬信用卡。</li>
                 <li><strong>國家欄位：</strong> 必須保持為「美國」。</li>
                 <li>
-                    <strong>免稅設定：</strong> 為避免額外稅金，請輸入美國「免稅州」郵遞區號。
-                    <a href="https://www.google.com/search?q=Oregon+zip+code" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">search</span> 查詢俄勒岡州 (Oregon) 郵遞區號
-                    </a> （例如填入：97080）。
+                    <strong>免稅設定：</strong> 為避免額外稅金，請輸入美國「免稅州」郵遞區號與地址。您可透過以下工具自動生成美國地址資料：
+                    <a href="https://www.meiguodizhi.com/" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">location_on</span> 獲取美國身分資料 (地址生成)
+                    </a>
                 </li>
-                <li>點擊「儲存」與「訂閱」，恭喜您成功升級為 AI Premium 尊享會員！</li>
+                <li>填妥資料後，點擊「儲存」與「訂閱」，恭喜您成功升級為 AI Premium 尊享會員！</li>
             </ol>
         </section>
 
@@ -411,10 +442,10 @@
             </div>
             <ol class="custom-list">
                 <li>
-                    <strong>啟用兩步驟驗證：</strong> 剛才授權了第三方平台，現在必須立刻回到 <a href="https://myaccount.google.com/security" target="_blank" class="action-link" style="margin:0; padding: 4px 8px;">安全性設定</a>。在手機下載「Google Authenticator」APP，重新掃描綁定驗證器。
+                    <strong>啟用兩步驟驗證：</strong> 剛才授權了第三方平台，現在必須立刻回到 <a href="https://myaccount.google.com/security" target="_blank" style="color: var(--google-blue);">安全性設定</a>。在手機下載「Google Authenticator」APP，重新掃描並添加/修改身分驗證器。
                 </li>
                 <li>
-                    <strong>取消自動續訂：</strong> 避免一年後忘記而被扣款。
+                    <strong>取消訂閱：</strong> 避免一年後忘記而被扣款。
                     <a href="https://myaccount.google.com/subscriptions" target="_blank" class="action-link">
                         <span class="material-symbols-outlined">event_busy</span> 前往付款與訂閱頁面
                     </a>
