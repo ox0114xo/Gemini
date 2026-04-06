@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Advanced 12個月免費領取教學 - Google 風格指南</title>
+    <title>Gemini Advanced 12個月免費領取教學 - 專業實操指南</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
     <style>
-        /* Google Material Design 基礎變數設定 */
         :root {
             --google-blue: #1a73e8;
             --google-red: #ea4335;
@@ -21,7 +20,7 @@
             --hover-bg: #f1f3f4;
             --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
             --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --radius-lg: 12px;
+            --radius-lg: 16px;
             --radius-md: 8px;
         }
 
@@ -39,10 +38,10 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 頂部導航列 (Google 風格) */
+        /* 響應式導航列 */
         nav {
             background-color: var(--surface-color);
-            padding: 12px 24px;
+            padding: 16px 24px;
             display: flex;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
@@ -52,58 +51,64 @@
         }
 
         .nav-logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 500;
             color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         
         .nav-logo span {
             color: var(--google-blue);
         }
 
-        /* 主要內容容器 */
+        /* 主容器自適應 */
         main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
+            width: 100%;
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 24px 16px;
         }
 
-        /* 標題區塊 */
+        @media (min-width: 768px) {
+            main {
+                padding: 40px 24px;
+            }
+        }
+
+        /* 標題美化 */
         .page-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
 
         .page-header h1 {
-            font-size: 36px;
+            font-size: clamp(24px, 5vw, 36px);
             font-weight: 400;
             margin-bottom: 12px;
             color: var(--text-primary);
         }
 
         .page-header p {
-            font-size: 18px;
+            font-size: clamp(14px, 2vw, 18px);
             color: var(--text-secondary);
         }
 
-        /* 卡片設計 (核心區塊) */
+        /* 谷歌卡片設計 */
         .card {
             background: var(--surface-color);
             border-radius: var(--radius-lg);
             border: 1px solid var(--border-color);
-            padding: 32px;
+            padding: clamp(20px, 4vw, 32px);
             margin-bottom: 24px;
-            transition: box-shadow 0.2s;
+            transition: box-shadow 0.3s ease;
         }
 
         .card:hover {
             box-shadow: var(--shadow-sm);
         }
 
-        /* 準備工作區塊 */
         .prep-section {
             background-color: #e8f0fe;
             border: none;
@@ -114,36 +119,32 @@
             color: var(--google-blue);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
             font-size: 20px;
             font-weight: 500;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
-        /* 步驟清單樣式 */
-        .step-container {
-            position: relative;
-        }
-
+        /* 步驟 Header */
         .step-header {
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
             border-bottom: 1px solid var(--border-color);
         }
 
         .step-number {
             background-color: var(--google-blue);
             color: white;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
             flex-shrink: 0;
         }
@@ -154,37 +155,42 @@
             color: var(--text-primary);
         }
 
-        /* 內容清單 */
+        /* 重點：數字清單完美對齊 (Straight Alignment) */
         ol.custom-list {
             list-style: none;
-            counter-reset: my-counter;
+            counter-reset: step-counter;
         }
 
-        ol.custom-list li {
+        ol.custom-list > li {
             position: relative;
-            padding-left: 32px;
-            margin-bottom: 16px;
+            padding-left: 35px; /* 增加左側間距給數字 */
+            margin-bottom: 18px;
             font-size: 16px;
             color: var(--text-primary);
+            text-align: justify;
         }
 
-        ol.custom-list li::before {
-            counter-increment: my-counter;
-            content: counter(my-counter) ".";
+        ol.custom-list > li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter) ".";
             position: absolute;
             left: 0;
+            top: 0;
+            width: 25px; /* 固定數字寬度確保對齊 */
             color: var(--text-secondary);
             font-weight: 500;
+            text-align: left;
         }
 
+        /* 複選清單樣式 */
         ul.check-list {
             list-style: none;
         }
 
         ul.check-list li {
             position: relative;
-            padding-left: 32px;
-            margin-bottom: 12px;
+            padding-left: 35px;
+            margin-bottom: 16px;
         }
 
         ul.check-list li .material-symbols-outlined {
@@ -192,103 +198,127 @@
             left: 0;
             top: 2px;
             color: var(--google-green);
-            font-size: 20px;
+            font-size: 22px;
         }
 
-        /* Google 風格按鈕 / 連結 */
+        /* 專業按鈕樣式 */
         .action-link {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             color: var(--google-blue);
             text-decoration: none;
             font-weight: 500;
-            padding: 8px 16px;
-            border-radius: var(--radius-md);
-            transition: background-color 0.2s;
-            background-color: rgba(26,115,232,0.04);
-            margin: 8px 0;
-            font-size: 15px;
+            padding: 10px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            background-color: var(--surface-color);
+            margin: 10px 0;
+            font-size: 14px;
         }
 
         .action-link:hover {
-            background-color: rgba(26,115,232,0.08);
-            text-decoration: none;
+            background-color: rgba(26,115,232,0.04);
+            border-color: var(--google-blue);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         
         .action-link .material-symbols-outlined {
-            font-size: 18px;
+            font-size: 20px;
         }
 
-        /* 提示與筆記區塊樣式 */
+        /* 警告與筆記區塊 */
         .alert {
             display: flex;
             gap: 16px;
-            padding: 16px;
+            padding: 20px;
             border-radius: var(--radius-md);
             margin-top: 24px;
             background-color: #fce8e6;
             border: 1px solid #fad2cf;
         }
 
-        .alert-icon {
-            color: var(--google-red);
-        }
-
         .alert-content strong {
             display: block;
             color: var(--google-red);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            font-size: 16px;
         }
 
         .note-box {
             background-color: #f1f3f4;
-            padding: 16px;
+            padding: 20px;
             border-radius: var(--radius-md);
-            margin-top: 12px;
+            margin-top: 16px;
             font-size: 14px;
             color: var(--text-secondary);
             line-height: 1.8;
+            overflow-x: auto; /* 防止表格在小螢幕爆開 */
         }
 
+        /* 免稅州表格自適應 */
         .tax-free-table {
             width: 100%;
+            min-width: 300px;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 15px;
             background-color: #ffffff;
-            border-radius: 4px;
+            border-radius: 8px;
             overflow: hidden;
-        }
-
-        .tax-free-table td {
-            padding: 8px 12px;
             border: 1px solid var(--border-color);
-            color: var(--text-primary);
         }
 
-        /* 回到頂部按鈕 */
+        .tax-free-table td, .tax-free-table th {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .tax-free-table th {
+            background-color: #f8f9fa;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        /* 回到頂部按鈕 (FAB) */
         #fab {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 24px;
+            right: 24px;
             width: 56px;
             height: 56px;
             border-radius: 50%;
             background-color: var(--surface-color);
-            color: var(--text-secondary);
+            color: var(--google-blue);
             border: none;
             box-shadow: var(--shadow-md);
             cursor: pointer;
             display: none;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.2s, color 0.2s;
+            transition: all 0.2s ease;
             z-index: 1000;
         }
 
         #fab:hover {
-            background-color: var(--hover-bg);
-            color: var(--google-blue);
+            background-color: var(--google-blue);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* 結語 */
+        .footer-status {
+            text-align: center;
+            padding: 48px 0;
+            color: var(--text-secondary);
+        }
+
+        .footer-status .material-symbols-outlined {
+            font-size: 40px;
+            color: var(--google-green);
+            margin-bottom: 12px;
         }
     </style>
 </head>
@@ -305,8 +335,8 @@
         <header class="page-header">
             <h1>Gemini Advanced 12個月免費領取教學</h1>
             <p>無需 Pixel 設備 · 免學生認證 · 安全快速設定</p>
-            <div style="margin-top: 16px;">
-                <a href="https://support.google.com/gemini/answer/13529884" target="_blank" class="action-link" style="background-color: transparent; border: 1px solid var(--border-color);">
+            <div style="margin-top: 20px;">
+                <a href="https://support.google.com/gemini/answer/13529884" target="_blank" class="action-link">
                     <span class="material-symbols-outlined">info</span> 官方活動詳情與規範
                 </a>
             </div>
@@ -320,11 +350,11 @@
             <ul class="check-list">
                 <li>
                     <span class="material-symbols-outlined">check_circle</span>
-                    <strong>支援海外刷卡的信用卡：</strong> 台灣實體信用卡或虛擬卡皆可（如中信、國泰、玉山等），僅用於驗證，<strong>不會預先扣款</strong>。
+                    <strong>支援海外刷卡的信用卡：</strong> 台灣信用卡皆可（如中信、國泰、玉山等），僅用於驗證身分，<strong>絕不會預先扣款</strong>。
                 </li>
                 <li>
                     <span class="material-symbols-outlined">check_circle</span>
-                    <strong>美國節點 VPN：</strong> 市面上的 VPN 服務皆可，請務必全程開啟「全局模式」並連線至美國。
+                    <strong>美國連線節點 VPN：</strong> 全程請務必開啟「全局模式」並確保連線位置顯示為美國。
                 </li>
             </ul>
         </section>
@@ -335,16 +365,16 @@
                 <h2 class="step-title">取得 Google 帳號</h2>
             </div>
             <ol class="custom-list">
-                <li>為避免與您原本的帳號設定衝突或觸發安全機制，強烈建議<strong>註冊一個全新的帳號</strong>來操作。</li>
+                <li>為避免與既有帳號產生安全衝突，強烈建議<strong>註冊一個全新的 Google 帳號</strong>來進行本次操作。</li>
                 <li>
                     <a href="https://accounts.google.com/signup" target="_blank" class="action-link">
                         <span class="material-symbols-outlined">person_add</span> 前往 Google 帳號註冊頁面
                     </a>
                 </li>
-                <li>註冊完成後，請務必將帳號與密碼妥善保存至您的備忘錄中。</li>
+                <li>註冊完成後，請務必妥善紀錄帳號與密碼。</li>
             </ol>
             <div class="note-box">
-                <strong>💡 備用方案：</strong>如果您因為網路環境無法順利註冊新帳號，也可選擇購買已建置好的乾淨帳號 <br>
+                <strong>💡 備用方案：</strong>若網路環境受限無法註冊，可選擇購買乾淨帳號：<br>
                 <a href="https://gmailbuy.com/" target="_blank" style="color: var(--google-blue); text-decoration: none; display: inline-block; margin-top: 8px;">👉 點此前往 Gmail 帳號購買平台</a>
             </div>
         </section>
@@ -352,26 +382,26 @@
         <section class="card step-container">
             <div class="step-header">
                 <div class="step-number">2</div>
-                <h2 class="step-title">登入與環境驗證</h2>
+                <h2 class="step-title">連線環境驗證</h2>
             </div>
             <ol class="custom-list">
-                <li>確認您的 VPN 已經穩定連線至<strong>「美國」</strong>節點。</li>
+                <li>確認您的 VPN 已確實連線至<strong>「美國 (USA)」</strong>。</li>
                 <li>
-                    登入新帳號：
+                    登入您的新帳號：
                     <a href="https://accounts.google.com/" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">login</span> 前往 Google 登入
+                        <span class="material-symbols-outlined">login</span> 立即登入 Google
                     </a>
                 </li>
                 <li>
-                    登入成功後，請進行進階驗證，確認系統自動識別國家為「美國」：
-                    <a href="https://console.cloud.google.com/welcome/new?_gl=1*35tsm*_up*MQ..*_gs*MQ..&gclid=CjwKCAjwvqjOBhAGEiwAngeQnQiAH1oqwctNO_su4NsvM_zHBkB9NRQ3Bl4_S-_d9CM1fB3qeol8XRoC-z0QAvD_BwE&gclsrc=aw.ds&pli=1" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">cloud</span> 打開 Google Cloud 進行驗證
+                    進入驗證頁面，確認系統自動識別國家顯示為「美國」：
+                    <a href="https://console.cloud.google.com/welcome/new?pli=1" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">cloud</span> 打開 Google Cloud 驗證環境
                     </a>
                 </li>
             </ol>
             <div class="note-box">
-                <strong>💡 2FA 驗證工具 (若您是購買的帳號)：</strong>若您登入時需要輸入兩步驗證碼，請使用購買時附帶的密鑰，透過以下工具獲取 6 位數驗證碼：<br>
-                <a href="https://2fa.vip/" target="_blank" style="color: var(--google-blue); text-decoration: none; margin-right: 16px;">👉 2FA 接收網站 (一)</a>
+                <strong>💡 2FA 驗證工具：</strong>若為購買之帳號需輸入兩步驗證碼，請使用以下工具：<br>
+                <a href="https://2fa.vip/" target="_blank" style="color: var(--google-blue); text-decoration: none; margin-right: 20px;">👉 2FA 接收網站 (一)</a>
                 <a href="https://2fa.kennygmail.com/" target="_blank" style="color: var(--google-blue); text-decoration: none;">👉 2FA 接收網站 (二)</a>
             </div>
         </section>
@@ -379,23 +409,23 @@
         <section class="card step-container">
             <div class="step-header">
                 <div class="step-number">3</div>
-                <h2 class="step-title">完善帳號輔助安全資訊</h2>
+                <h2 class="step-title">加強帳號安全防護</h2>
             </div>
             <ol class="custom-list">
                 <li>
-                    進入設定頁面：
+                    進入安全設定頁面：
                     <a href="https://myaccount.google.com/security" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">security</span> 前往安全性設定
+                        <span class="material-symbols-outlined">security</span> 帳號安全性設定
                     </a>
                 </li>
-                <li>點擊新增<strong>「備援電話號碼」</strong>。選擇台灣，輸入自己常用的手機號碼並完成簡訊驗證。</li>
-                <li>點擊新增<strong>「備援電子郵件信箱」</strong>。填寫您原本常用的信箱，便於日後找回帳號。</li>
+                <li>新增<strong>「備援電話號碼」</strong>：選擇台灣 (+886)，輸入自己的手機號碼並完成驗證。</li>
+                <li>新增<strong>「備援電子郵件」</strong>：填寫您原本主要使用的信箱，確保帳號安全。</li>
             </ol>
-            <div class="alert" style="background-color: #fff8e1; border-color: #ffecb3;">
-                <span class="material-symbols-outlined" style="color: var(--google-yellow);">warning</span>
+            <div class="alert">
+                <span class="material-symbols-outlined alert-icon">warning</span>
                 <div class="alert-content">
-                    <strong style="color: #b07d00;">核心安全細節</strong>
-                    <span style="color: var(--text-primary);">剛註冊並登入時<strong>「絕對不要」</strong>馬上修改登入密碼，請先維持原狀使用一兩天後再改，以免觸發異常風控。</span>
+                    <strong>重要安全細節</strong>
+                    <span>剛註冊完成時<strong>「絕對不要」</strong>立即修改密碼，請維持現狀使用 48 小時後再進行變更，以防觸發系統風控導致鎖號。</span>
                 </div>
             </div>
         </section>
@@ -403,92 +433,91 @@
         <section class="card step-container">
             <div class="step-header">
                 <div class="step-number">4</div>
-                <h2 class="step-title">進行 Pixel 虛擬設備認證</h2>
+                <h2 class="step-title">進行虛擬設備認證</h2>
             </div>
             <ol class="custom-list">
                 <li>
-                    若您的認證平台帳戶餘額不足，請先購買積分：
+                    若您的認證平台額度不足，請先購買積分：
                     <a href="https://www.pksto.com/" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">shopping_cart</span> one.idkey 積分購買
+                        <span class="material-symbols-outlined">shopping_cart</span> 積分購買入口
                     </a>
                 </li>
                 <li>
-                    打開代刷認證平台：
+                    前往認證平台進行模擬 Pixel 設備：
                     <a href="https://one.idkey.cc/?ref=729999721" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">devices</span> one.idkey 認證網站
+                        <span class="material-symbols-outlined">devices</span> one.idkey 設備認證網站
                     </a>
                 </li>
-                <li>在認證介面中填入您的 Google 帳號與密碼，授權平台進行設備模擬。</li>
-                <li>點擊開始驗證，等待約 30 秒。成功後，系統會產出一串專屬兌換網址。</li>
-                <li>將該網址複製並在瀏覽器新分頁中打開，若出現 12 個月免費畫面，即代表認證成功。</li>
+                <li>於介面輸入 Google 帳號與密碼，授權平台模擬設備。</li>
+                <li>驗證過程約需 30 秒，成功後會獲得一組「專屬兌換網址」。</li>
+                <li>將該網址複製並在新視窗打開，若出現「12 個月免費」即代表認證成功。</li>
             </ol>
         </section>
 
         <section class="card step-container">
             <div class="step-header">
                 <div class="step-number">5</div>
-                <h2 class="step-title">兌換優惠與綁定信用卡</h2>
+                <h2 class="step-title">領取優惠與付款設定</h2>
             </div>
             <ol class="custom-list">
                 <li>
-                    前往 Gemini 兌換頁面：
+                    前往 Gemini 兌換介面：
                     <a href="https://gemini.google.com/app" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">card_membership</span> 開啟 Gemini 頁面
+                        <span class="material-symbols-outlined">card_membership</span> 開啟 Gemini 領取頁面
                     </a>
                 </li>
-                <li style="list-style-type: none; padding-left: 0; margin-top: -8px;">
-                    <span style="font-size: 14px; color: var(--text-secondary); display: block; margin-bottom: 8px;">(若上方連結無法直接開啟，請改用： <a href="https://gemini.google.com/gems/create?hl=en-US" target="_blank" style="color: var(--google-blue);">備用兌換入口</a>)</span>
-                </li>
-                <li>點擊「開始使用」，付款方式選擇<strong>「新增信用卡」</strong>，輸入您的國內外幣信用卡或虛擬卡。</li>
-                <li><strong>國家欄位：</strong> 務必保持為「美國」。</li>
+                <li>若上方網址未自動彈出優惠，請嘗試：<a href="https://gemini.google.com/gems/create?hl=en-US" target="_blank" style="color: var(--google-blue);">[備用兌換入口]</a></li>
+                <li>點擊「開始使用」，並點選<strong>「新增信用卡」</strong>，填寫您的卡號資訊。</li>
+                <li><strong>帳單國家：</strong> 務必選擇「美國」。</li>
             </ol>
 
-            <div class="note-box" style="border-left: 4px solid var(--google-yellow); background-color: #fffde7; margin-top: 20px;">
-                <div style="display:flex; align-items:center; gap:8px; color:#b07d00; margin-bottom:8px;">
+            <div class="note-box" style="border-left: 4px solid var(--google-yellow); background-color: #fffde7;">
+                <div style="display:flex; align-items:center; gap:8px; color:#b07d00; margin-bottom:12px;">
                     <span class="material-symbols-outlined">payments</span>
-                    <strong>💡 免稅州地址與郵遞區號建議</strong>
+                    <strong>💡 美國免稅州地址建議</strong>
                 </div>
-                <p style="margin-bottom: 10px;">填寫信用卡帳單地址時，選擇以下「免稅州」可避免 5%~10% 的消費稅：</p>
+                <p style="margin-bottom: 12px;">使用以下免稅州郵遞區號 (Zip Code) 可避免額外的消費稅：</p>
                 <table class="tax-free-table">
-                    <tr><td><b>州名</b></td><td><b>郵遞區號 (Zip Code)</b></td><td><b>城市代表</b></td></tr>
-                    <tr style="background-color: #fff9c4;"><td><b>俄勒岡州 (OR)</b></td><td><b>97080</b></td><td><b>最推薦 (免稅)</b></td></tr>
-                    <tr><td>德拉瓦州 (DE)</td><td>19701</td><td>Bear</td></tr>
-                    <tr><td>阿拉斯加 (AK)</td><td>99501</td><td>Anchorage</td></tr>
-                    <tr><td>蒙大拿州 (MT)</td><td>59101</td><td>Billings</td></tr>
-                    <tr><td>新罕布夏 (NH)</td><td>03101</td><td>Manchester</td></tr>
+                    <thead>
+                        <tr><th>州別</th><th>Zip Code</th><th>城市代表</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #fff9c4;"><td><b>俄勒岡州 (OR)</b></td><td><b>97080</b></td><td><b>最推薦 (免稅)</b></td></tr>
+                        <tr><td>德拉瓦州 (DE)</td><td>19701</td><td>Bear</td></tr>
+                        <tr><td>阿拉斯加 (AK)</td><td>99501</td><td>Anchorage</td></tr>
+                        <tr><td>蒙大拿州 (MT)</td><td>59101</td><td>Billings</td></tr>
+                        <tr><td>新罕布夏 (NH)</td><td>03101</td><td>Manchester</td></tr>
+                    </tbody>
                 </table>
-                <a href="https://www.meiguodizhi.com/" target="_blank" class="action-link" style="margin-top: 12px; font-size: 13px;">
-                    <span class="material-symbols-outlined">location_on</span> 使用美國地址生成器獲取完整街道資料
+                <a href="https://www.meiguodizhi.com/" target="_blank" class="action-link" style="margin-top: 15px;">
+                    <span class="material-symbols-outlined">location_on</span> 獲取美國身分與詳細地址資料
                 </a>
             </div>
-            
-            <p style="margin-top: 16px; font-size: 16px;">填妥資料後點擊「儲存」與「訂閱」，即可成功升級為尊享會員！</p>
         </section>
 
         <section class="card step-container">
             <div class="step-header">
                 <div class="step-number">6</div>
-                <h2 class="step-title">強化安全與取消續訂</h2>
+                <h2 class="step-title">安全收尾與管理訂閱</h2>
             </div>
             <ol class="custom-list">
                 <li>
-                    <strong>重設安全驗證：</strong> 前往 <a href="https://myaccount.google.com/security" target="_blank" style="color: var(--google-blue);">安全性設定</a>。在手機下載「Google Authenticator」APP，重新掃描並添加您的專屬驗證碼。
+                    <strong>重設驗證器：</strong> 回到 <a href="https://myaccount.google.com/security" target="_blank" style="color: var(--google-blue);">安全性設定</a>。下載手機版「Google Authenticator」，掃描並重新綁定您的帳號。
                 </li>
                 <li>
-                    <strong>取消自動續訂：</strong> 為防止一年後忘記而被扣款，請立即：
+                    <strong>取消自動續訂：</strong> 為防止一年後被自動扣款，領取後請立即：
                     <a href="https://myaccount.google.com/subscriptions" target="_blank" class="action-link">
-                        <span class="material-symbols-outlined">event_busy</span> 前往付款與訂閱頁面
+                        <span class="material-symbols-outlined">event_busy</span> 前往付款與訂閱管理
                     </a>
                 </li>
-                <li>找到 AI Premium 項目，點選「管理訂閱」並執行「取消訂閱」。<strong>這不會影響您這一整年的免費權限。</strong></li>
+                <li>找到 AI Premium 項目，點擊「取消訂閱」。<strong>即使取消，您的 12 個月免費權益仍會保留至到期日。</strong></li>
             </ol>
         </section>
 
-        <div style="text-align: center; margin-top: 40px; color: var(--text-secondary);">
-            <span class="material-symbols-outlined" style="font-size: 32px; color: var(--google-green); margin-bottom: 8px; display: block;">task_alt</span>
-            <p>設定完成！開啟您的 Google AI 全方位體驗吧。</p>
+        <div class="footer-status">
+            <span class="material-symbols-outlined">task_alt</span>
+            <p>設定完成！盡情享受 Gemini Advanced 的強大功能吧。</p>
         </div>
-
     </main>
 
     <button id="fab" title="回到頂部">
@@ -498,22 +527,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const fab = document.getElementById('fab');
-
-            // 滾動監聽：顯示/隱藏 FAB 按鈕
             window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
+                if (window.scrollY > 400) {
                     fab.style.display = 'flex';
                 } else {
                     fab.style.display = 'none';
                 }
             });
-
-            // 點擊回頂部
             fab.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
     </script>
