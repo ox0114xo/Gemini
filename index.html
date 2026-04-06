@@ -3,87 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Advanced 12個月免費領取教學</title>
-    <link rel="stylesheet" href="blog_style.css">
+    <title>Gemini Advanced 12個月免費領取教學 - Google 風格指南</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <style>
+        /* Google Material Design 基礎變數設定 */
+        :root {
+            --google-blue: #1a73e8;
+            --google-red: #ea4335;
+            --google-yellow: #fbbc04;
+            --google-green: #34a853;
+            --bg-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --border-color: #dadce0;
+            --hover-bg: #f1f3f4;
+            --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --radius-lg: 12px;
+            --radius-md: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 頂部導航列 (Google 風格) */
+        nav {
+            background-color: var(--surface-color);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-logo span {
+            color: var(--google-blue);
+        }
+
+        /* 主要內容容器 */
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 標題區塊 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        /* 卡片設計 (核心區塊) */
+        .card {
+            background: var(--surface-color);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            margin-bottom: 24px;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* 準備工作區塊 */
+        .prep-section {
+            background-color: #e8f0fe;
+            border: none;
+            border-left: 6px solid var(--google-blue);
+        }
+
+        .prep-title {
+            color: var(--google-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        /* 步驟清單樣式 */
+        .step-container {
+            position: relative;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .step-number {
+            background-color: var(--google-blue);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        .step-title {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        /* 內容清單 */
+        ol.custom-list {
+            list-style: none;
+            counter-reset: my-counter;
+        }
+
+        ol.custom-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        ol.custom-list li::before {
+            counter-increment: my-counter;
+            content: counter(my-counter) ".";
+            position: absolute;
+            left: 0;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        ul.check-list {
+            list-style: none;
+        }
+
+        ul.check-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 12px;
+        }
+
+        ul.check-list li .material-symbols-outlined {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--google-green);
+            font-size: 20px;
+        }
+
+        /* Google 風格按鈕 / 連結 */
+        .action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--google-blue);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            transition: background-color 0.2s;
+            background-color: rgba(26,115,232,0.04);
+            margin: 8px 0;
+        }
+
+        .action-link:hover {
+            background-color: rgba(26,115,232,0.08);
+            text-decoration: none;
+        }
+        
+        .action-link .material-symbols-outlined {
+            font-size: 18px;
+        }
+
+        /* 提示框 (Warning / Note) */
+        .alert {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            margin-top: 24px;
+            background-color: #fce8e6;
+            border: 1px solid #fad2cf;
+        }
+
+        .alert-icon {
+            color: var(--google-red);
+        }
+
+        .alert-content strong {
+            display: block;
+            color: var(--google-red);
+            margin-bottom: 4px;
+        }
+
+        /* 回到頂部按鈕 */
+        #fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: var(--surface-color);
+            color: var(--text-secondary);
+            border: none;
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, color 0.2s;
+            z-index: 1000;
+        }
+
+        #fab:hover {
+            background-color: var(--hover-bg);
+            color: var(--google-blue);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Gemini 最新免費領取實測：Google AI Pro 12個月</h1>
-        <p>無需 Pixel 設備 | 輕鬆解決帳號註冊與安全認證</p>
-    </header>
-    
-    <div class="container">
-        <p class="intro-text">歡迎來到本圖文教學。AI 的進化非常快速，頂尖的 AI 模型絕對值得深度體驗！剛好 Google 推出了免費體驗 Gemini Advanced (AI Pro) 12 個月的活動，以下是完整的申請圖文步驟，趁活動還沒結束，趕緊跟著教學來申請一個！</p>
-        
-        <h2>一、準備工作</h2>
-        <ul>
-            <li><strong>支援海外刷卡的信用卡：</strong> 台灣實體信用卡或虛擬卡皆可（如中國信託、國泰世華、玉山銀行等），用於後續綁卡認證，不會預先扣款。</li>
-            <li><strong>美國節點 VPN：</strong> 市面上的 VPN 服務皆可，請全程開啟「全局模式」並確保使用美國 IP（建議透過 IP 查詢網站確認您的連線位置）。</li>
-        </ul>
 
-        <h2>二、詳細操作步驟</h2>
+    <nav>
+        <div class="nav-logo">
+            <span class="material-symbols-outlined">auto_awesome</span>
+            Google AI Pro 領取指南
+        </div>
+    </nav>
 
-        <h3>1. 註冊全新的 Google 帳號 (Gmail)</h3>
-        <p>在台灣，我們不需要刻意購買帳號，直接依照正常流程註冊即可。為了避免與您原本的帳號設定衝突或觸發異常活動風控，強烈建議直接註冊一個全新的帳號來進行本次操作。<a href="https://accounts.google.com/signup" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 點此前往 Google 帳號註冊頁面]</a></p>
-        <div class="warning">
-            <strong>⚠️ 註冊提醒：</strong> 註冊完成後，請務必將帳號與密碼妥善保存。
+    <main>
+        <header class="page-header">
+            <h1>Gemini Advanced 12個月免費領取教學</h1>
+            <p>無需 Pixel 設備 · 免學生認證 · 安全快速設定</p>
+        </header>
+
+        <section class="card prep-section">
+            <div class="prep-title">
+                <span class="material-symbols-outlined">inventory_2</span>
+                操作前準備
+            </div>
+            <ul class="check-list">
+                <li>
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <strong>支援海外刷卡的信用卡：</strong> 台灣實體信用卡或虛擬卡皆可（如中信、國泰、玉山等），僅用於驗證，<strong>不會預先扣款</strong>。
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <strong>美國節點 VPN：</strong> 市面上的 VPN 服務皆可，請務必全程開啟「全局模式」並連線至美國。
+                </li>
+            </ul>
+        </section>
+
+        <section class="card step-container">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2 class="step-title">註冊全新 Google 帳號</h2>
+            </div>
+            <ol class="custom-list">
+                <li>為避免與您原本的帳號設定衝突或觸發安全機制，強烈建議<strong>註冊一個全新的帳號</strong>來操作。</li>
+                <li>
+                    <a href="https://accounts.google.com/signup" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">open_in_new</span> 前往 Google 帳號註冊頁面
+                    </a>
+                </li>
+                <li>註冊完成後，請務必將帳號與密碼妥善保存至您的備忘錄中。</li>
+            </ol>
+        </section>
+
+        <section class="card step-container">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2 class="step-title">登入與環境驗證</h2>
+            </div>
+            <ol class="custom-list">
+                <li>確認您的 VPN 已經穩定連線至<strong>「美國」</strong>節點。</li>
+                <li>
+                    登入新帳號：
+                    <a href="https://accounts.google.com/" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">login</span> 前往 Google 登入
+                    </a>
+                </li>
+                <li>登入成功後，將網頁滑至最底端，確認地區顯示為「美國」。</li>
+                <li>
+                    進階驗證：
+                    <a href="https://console.cloud.google.com/" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">cloud</span> 打開 Google Cloud
+                    </a>，若系統自動識別國家為「美國」，代表節點偽裝成功。
+                </li>
+            </ol>
+        </section>
+
+        <section class="card step-container">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2 class="step-title">完善帳號輔助安全資訊</h2>
+            </div>
+            <ol class="custom-list">
+                <li>
+                    進入設定頁面：
+                    <a href="https://myaccount.google.com/security" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">security</span> 前往安全性設定
+                    </a>
+                </li>
+                <li>點擊新增<strong>「備援電話號碼」</strong>。選擇台灣，輸入自己常用的手機號碼並完成簡訊驗證。</li>
+                <li>點擊新增<strong>「備援電子郵件信箱」</strong>。填寫您原本常用的信箱，便於日後找回帳號。</li>
+            </ol>
+            <div class="alert" style="background-color: #fff8e1; border-color: #ffecb3;">
+                <span class="material-symbols-outlined" style="color: var(--google-yellow);">warning</span>
+                <div class="alert-content">
+                    <strong style="color: #b07d00;">核心安全細節</strong>
+                    <span style="color: var(--text-primary);">剛註冊並登入時<strong>「絕對不要」</strong>馬上修改登入密碼，請先維持原狀使用一兩天後再改，以免觸發異常風控。</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card step-container">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <h2 class="step-title">進行 Pixel 虛擬設備認證</h2>
+            </div>
+            <ol class="custom-list">
+                <li>
+                    打開代刷平台：
+                    <a href="#" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">devices</span> 第三方 Pixel 認證平台 
+                    </a> <span style="font-size: 14px; color: var(--text-secondary);">(請填入實際網址)</span>
+                </li>
+                <li>註冊該網站會員，選擇「Pixel 設備認證」服務並完成購買。</li>
+                <li>付款後，在認證介面中填入您的 Google 帳號與密碼，授權平台進行設備模擬。</li>
+                <li>點擊開始驗證，等待約 30 秒。成功後，系統會產出一串專屬兌換網址。</li>
+                <li>將該網址複製並在瀏覽器新分頁中打開，若出現 12 個月免費畫面，即代表認證成功。</li>
+            </ol>
+        </section>
+
+        <section class="card step-container">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2 class="step-title">兌換優惠與綁定信用卡</h2>
+            </div>
+            <ol class="custom-list">
+                <li>
+                    前往兌換：
+                    <a href="https://gemini.google.com/advanced" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">card_membership</span> 開啟 Gemini Advanced 兌換頁
+                    </a>
+                </li>
+                <li>點擊「開始使用」，付款方式選擇<strong>「新增信用卡」</strong>，並填寫卡號等資訊。</li>
+                <li><strong>國家欄位：</strong> 必須保持為「美國」。</li>
+                <li>
+                    <strong>免稅設定：</strong> 為避免額外稅金，請輸入美國「免稅州」郵遞區號。
+                    <a href="https://www.google.com/search?q=Oregon+zip+code" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">search</span> 查詢俄勒岡州 (Oregon) 郵遞區號
+                    </a> （例如填入：97080）。
+                </li>
+                <li>點擊「儲存」與「訂閱」，恭喜您成功升級為 AI Premium 尊享會員！</li>
+            </ol>
+        </section>
+
+        <section class="card step-container">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <h2 class="step-title">強化帳號安全與取消續訂</h2>
+            </div>
+            <ol class="custom-list">
+                <li>
+                    <strong>啟用兩步驟驗證：</strong> 剛才授權了第三方平台，現在必須立刻回到 <a href="https://myaccount.google.com/security" target="_blank" class="action-link" style="margin:0; padding: 4px 8px;">安全性設定</a>。在手機下載「Google Authenticator」APP，重新掃描綁定驗證器。
+                </li>
+                <li>
+                    <strong>取消自動續訂：</strong> 避免一年後忘記而被扣款。
+                    <a href="https://myaccount.google.com/subscriptions" target="_blank" class="action-link">
+                        <span class="material-symbols-outlined">event_busy</span> 前往付款與訂閱頁面
+                    </a>
+                </li>
+                <li>找到 AI Premium 訂閱項目，點選「管理訂閱」>「取消訂閱」。<strong>取消操作不會影響您這一年的免費使用權益。</strong></li>
+            </ol>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px; color: var(--text-secondary);">
+            <span class="material-symbols-outlined" style="font-size: 32px; color: var(--google-green); margin-bottom: 8px; display: block;">task_alt</span>
+            <p>設定完成！開始享受您的 Gemini Advanced 體驗吧。</p>
         </div>
 
-        <h3>2. 登入 Google 帳號與環境驗證</h3>
-        <ol>
-            <li>確保您的 VPN 已經連線至「美國」節點。</li>
-            <li>打開 <a href="https://accounts.google.com/" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 Google 登入頁面]</a>，登入您剛註冊好的全新帳號。</li>
-            <li>登入成功後，將網頁往下拉確認當前顯示的地區為「美國」。</li>
-            <li>為確保萬無一失，可以打開 <a href="https://console.cloud.google.com/" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 Google Cloud (Google 雲端) 頁面]</a>，若系統直接識別國家為「美國」，代表您的節點偽裝非常成功。</li>
-        </ol>
+    </main>
 
-        <h3>3. 完善帳號輔助安全資訊</h3>
-        <ol>
-            <li>進入 <a href="https://myaccount.google.com/security" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 Google 帳號安全性設定]</a>，點擊新增「備援電話號碼」。直接選擇台灣，輸入自己常用的手機號碼並接收簡訊驗證碼完成綁定。</li>
-            <li>接著新增「備援電子郵件信箱」，建議輸入您常用的信箱（如 Yahoo 信箱或原本的 Gmail），萬一出問題比較好找回。</li>
-            <li><strong>核心細節：</strong> 剛註冊並登入時「絕對不要」馬上修改登入密碼，請先維持原狀使用一兩天後再改，避免觸發 Google 的安全風控機制。</li>
-        </ol>
+    <button id="fab" title="回到頂部">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
 
-        <h3>4. 進行 Pixel 虛擬設備認證</h3>
-        <ol>
-            <li>打開 <a href="#" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 第三方 Pixel 設備代刷認證平台]</a> <em>(註：請在此處填入您實際使用的驗證服務網址)</em>。</li>
-            <li>註冊該認證網站的會員帳號，然後在商品列表中選擇「Pixel 設備認證」相關服務並點擊購買。</li>
-            <li>付款後，打開認證介面，將您的 Google 帳號與密碼授權給該平台進行設備模擬。</li>
-            <li>點擊「開始驗證」，大約等待 30 秒。認證成功後系統會產出一串專屬兌換網址。</li>
-            <li>複製該網址，在新分頁中打開，若順利出現 12 個月免費兌換畫面，即代表設備認證成功。</li>
-        </ol>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fab = document.getElementById('fab');
 
-        <h3>5. 兌換優惠與綁定信用卡</h3>
-        <ol>
-            <li>在 <a href="https://gemini.google.com/advanced" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 Gemini Advanced 兌換頁面]</a> 點擊「開始使用」，付款方式選擇「新增信用卡」。</li>
-            <li>輸入您準備好的信用卡卡號、有效期限與安全碼。國家欄位必須保持為「美國」。</li>
-            <li>為避免產生額外稅金，需輸入美國「免稅州」的郵遞區號。可點擊 <a href="https://www.google.com/search?q=Oregon+zip+code" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 查詢俄勒岡州 (Oregon) 郵遞區號]</a> 並填入（例如：97080）。</li>
-            <li>點擊「儲存」與「訂閱」，恭喜！您的帳號已成功升級為 Google One AI Premium 尊享會員。</li>
-        </ol>
+            // 滾動監聽：顯示/隱藏 FAB 按鈕
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    fab.style.display = 'flex';
+                } else {
+                    fab.style.display = 'none';
+                }
+            });
 
-        <h3>6. 強化帳號安全 (極度重要)</h3>
-        <p>因為剛才將帳號密碼交給了第三方代刷網站，基於安全考量，必須立刻啟用兩步驟驗證並更改設定：</p>
-        <ol>
-            <li>回到 <a href="https://myaccount.google.com/security" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 Google 帳號安全性設定]</a>，進入「兩步驟驗證」設定，並輸入密碼驗證身分。</li>
-            <li>在手機上下載並打開官方的「Google Authenticator (Google 驗證器)」APP。</li>
-            <li>在網頁端選擇設定「驗證器應用程式」，使用手機 APP 掃描網頁上的 QR Code。</li>
-            <li>輸入手機 APP 上產生的最新 6 位數驗證碼，點擊「驗證」，即完成安全防護的升級。過幾天帳號穩定後，請務必再回來更改 Google 登入密碼。</li>
-        </ol>
-
-        <h3>7. 提前取消自動續訂</h3>
-        <p>為了避免 12 個月免費期滿後被自動扣取高額費用，我們可以直接提前取消訂閱：</p>
-        <ol>
-            <li>進入 Google 帳號的 <a href="https://myaccount.google.com/subscriptions" target="_blank" style="color: #1a73e8; font-weight: bold; text-decoration: none;">[👉 付款與訂閱頁面]</a>。</li>
-            <li>找到 AI Premium 的訂閱項目，確認到期日。</li>
-            <li>點擊「管理訂閱」，然後選擇「取消訂閱」即可。請放心，取消操作不會影響您這一年的免費使用權益。</li>
-        </ol>
-
-        <div class="warning">
-            <strong>🎉 結語</strong>
-            以上就是完整的圖文實作攻略，趁現在官方還有名額，趕緊幫自己領取一個！如果操作過程中有遇到什麼問題，歡迎在下方留言；如果有更好的方案，也歡迎大家分享交流。
-        </div>
-    </div>
-
-    <script src="blog_script.js"></script>
+            // 點擊回頂部
+            fab.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
